@@ -1,11 +1,13 @@
 FROM ubuntu:saucy
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get -q -y install gcc && apt-get clean
+RUN apt-get -q -y install gcc git-core && apt-get clean
 ADD https://codeload.github.com/Araq/Nimrod/tar.gz/master /opt/master.tgz
-RUN cd /opt && tar -zxvf master.tgz
-ADD https://codeload.github.com/nimrod-code/csources/tar.gz/master /opt/Nimrod-master/csources.tgz
-RUN cd /opt/Nimrod-master && tar -zxvf csources.tgz && \
-    cd csources-master && sh build.sh && \
+RUN cd /opt && \
+    tar -zxvf master.tgz && \
+    cd /opt/Nimrod-master && \
+    git clone --depth 1 git://github.com/nimrod-code/csources && \    
+    cd csources && \
+    sh build.sh && \
     cd .. && \
     bin/nimrod c koch && \
     ./koch boot -d:release && \
