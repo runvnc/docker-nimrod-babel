@@ -18,4 +18,3 @@ RUN cd /opt && \
     cd babel-master && \
     nimrod c -r src/babel install
 ENV PATH /.babel/bin:/usr/lib/ccache:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
-ENTRYPOINT /bin/bash
