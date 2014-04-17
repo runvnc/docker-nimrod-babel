@@ -17,4 +17,4 @@ RUN cd /opt && \
     tar -zxvf babel-master.tgz && \
     cd babel-master && \
     nimrod c -r src/babel install
-ENV PATH /.babel/bin:/usr/lib/ccache:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+ENV PATH /.babel/bin:/usr/lib/ccache:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games 
