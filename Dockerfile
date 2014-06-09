@@ -2,6 +2,8 @@ FROM ubuntu:saucy
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -q -y install gcc git-core && apt-get clean
 ADD https://codeload.github.com/Araq/Nimrod/tar.gz/master /opt/master.tgz
+# This is a comment.
+RUN ls /
 RUN cd /opt && \
     tar -zxvf master.tgz && \
     cd /opt/Nimrod-master && \
